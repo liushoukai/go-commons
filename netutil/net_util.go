@@ -1,14 +1,14 @@
-package commons
+package netutil
 
 import (
 	"log"
 	"net"
 )
 
-func GetLocalIP() string {
+func GetServerIP() string {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
-		log.Printf("getLocalIP failed:%s", err.Error())
+		log.Printf("获取本地IP失败:%s", err.Error())
 		return "127.0.0.1"
 	}
 	for _, address := range addrs {
